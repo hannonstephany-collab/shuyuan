@@ -1,0 +1,26 @@
+[
+  {
+    "name": "风车漫画",
+    "type": "comic",
+    "url": "https://www.fengchemh.com",
+
+    "find": "a[href*='/comic/']",
+    "bookName": "a&&title",
+    "bookCover": "img&&src",
+    "bookUrl": "a&&href",
+
+    "chapterList": "a[href*='/chapter/']",
+    "chapterName": "a&&Text",
+    "chapterUrl": "a&&href",
+
+    "content": "@js:
+      var list = [];
+      var html = response.body;
+
+      var imgs = html.match(/https?:\\\\/\\\\/[^\"' ]+\\\\.(jpg|png|jpeg|webp)/g);
+      if (imgs) list = imgs;
+
+      list;
+    "
+  }
+]
