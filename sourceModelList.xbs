@@ -2,11 +2,11 @@
   {
     "name": "风车漫画",
     "type": "comic",
-    "url": "https://www.fengchemh.com",
+    "url": "https://www.fengchemh.com/custom/top",
 
-    "find": "a[href*='/comic/']",
+    "find": "div.book-item",
     "bookName": "a&&title",
-    "bookCover": "img&&src",
+    "bookCover": "img&&data-src",
     "bookUrl": "a&&href",
 
     "chapterList": "a[href*='/chapter/']",
